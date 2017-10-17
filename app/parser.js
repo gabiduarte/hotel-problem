@@ -8,6 +8,10 @@ class Parser {
 		this.customerType = customerType;
 		this.dateRange = dateRange || "";
 	}
+
+	validateCustomer() {
+		return this.customerType == 'Regular' || this.customerType == 'Rewards';
+	}
 }
 
 module.exports = Parser;
