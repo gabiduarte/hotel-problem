@@ -36,4 +36,22 @@ describe('Parser', function() {
 			expect(parser.validateCustomer()).to.be.false;
 		});
 	});
+
+	describe('#validateDate(date)', function() {
+		let parser = new Parser(':');
+
+		it('should return true when argument is a day of the week', function() {
+			expect(parser.validateDate(6)).to.be.true;
+		});
+
+		it('should return false when there is no argument', function() {
+			expect(parser.validateDate()).to.be.false;
+		});
+
+		it('should return false when argument is not a day of the week', function() {
+			expect(parser.validateDate('')).to.be.false;
+			expect(parser.validateDate(NaN)).to.be.false;
+			expect(parser.validateDate('20abr2009')).to.be.false;
+		});
+	});
 });

@@ -12,6 +12,10 @@ class Parser {
 	validateCustomer() {
 		return this.customerType == 'Regular' || this.customerType == 'Rewards';
 	}
+
+	validateDate(date = "") {
+		return Number.isInteger(date);
+	}
 }
 
 module.exports = Parser;
