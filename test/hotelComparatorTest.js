@@ -10,6 +10,12 @@ describe('HotelComparator', function() {
             expect(comparator.parser).to.not.be.undefined;
         });
 
+        it('should add hotels to comparator when there is an input', function() {
+            let comparator = new HotelComparator('Rewards: 18Apr2001, 19Apr2002');
+
+            expect(comparator.hotels.length).to.equal(3);
+        });
+
         it('should throw an error when there is no input', function() {
             expect(function() {
                 return new HotelComparator('');
