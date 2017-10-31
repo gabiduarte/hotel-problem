@@ -27,6 +27,14 @@ class HotelComparator {
     findHighestRatingHotel(previousHotel, currentHotel) {
         return previousHotel.rating > currentHotel.rating ? previousHotel : currentHotel;
     }
+
+    calculateRateForHotel(hotel) {
+        const travelDays = this.parser.calculateDaysOfTheWeek();
+        const customerType = this.parser.customerType;
+        
+        let hotelRate = hotel.rates[customerType.toLowerCase()];
+        return (hotelRate.week * travelDays.week) + (hotelRate.weekend * travelDays.weekend);
+    }
 }
 
 module.exports = HotelComparator;
