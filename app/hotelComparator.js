@@ -23,6 +23,10 @@ class HotelComparator {
 
         return [lakewood, bridgewood, ridgewood];
     }
+
+    findHighestRatingHotel(previousHotel, currentHotel) {
+        return previousHotel.rating > currentHotel.rating ? previousHotel : currentHotel;
+    }
 }
 
 module.exports = HotelComparator;
