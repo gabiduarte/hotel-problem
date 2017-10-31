@@ -34,7 +34,7 @@ class Parser {
 				}
 			}			
 		});
-		return [weekDays, weekendDays];
+		return {week: weekDays, weekend: weekendDays};
 	}
 }
 

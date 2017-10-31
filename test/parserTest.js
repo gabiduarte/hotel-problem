@@ -58,19 +58,19 @@ describe('Parser', function() {
 	describe('#calculateDaysOfTheWeek()', function() {
 		it('should add week and weekendDays when passing a valid dateRange', function(){
 			let parser = new Parser('Regular: 18oct2017(wed), 19oct2017(thurs), 20oct2017(fri), 21oct2017(sat), 22oct2017(sun)');
-			expect(parser.calculateDaysOfTheWeek()).to.deep.equal([3,2]);
+			expect(parser.calculateDaysOfTheWeek()).to.deep.equal({week: 3, weekend: 2});
 		});
 		
 		it('should not add any days when there is no dateRange value', function(){
 			let parser = new Parser('Regular: ');
 			
-			expect(parser.calculateDaysOfTheWeek()).to.deep.equal([0,0]);
+			expect(parser.calculateDaysOfTheWeek()).to.deep.equal({week: 0, weekend: 0});
 		});
 
 		it('should not add any days when passing an invalid dateRange string', function() {
 			let parser = new Parser('Rewards: 20out2018, 90set2001, 75apr2010');
 
-			expect(parser.calculateDaysOfTheWeek()).to.deep.equal([0,0]);
+			expect(parser.calculateDaysOfTheWeek()).to.deep.equal({week: 0, weekend: 0});
 		});
 	});
 });
