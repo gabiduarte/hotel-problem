@@ -1,4 +1,4 @@
-const HotelComparator = require('../app/HotelComparator');
+const HotelComparator = require('../app/hotelComparator');
 const Parser = require('../app/Parser');
 const Hotel = require('../app/Hotel');
 const HotelRates = require('../app/HotelRates');
