@@ -1,7 +1,7 @@
 const HotelComparator = require('../app/hotelComparator');
-const Parser = require('../app/Parser');
-const Hotel = require('../app/Hotel');
-const HotelRates = require('../app/HotelRates');
+const Parser = require('../app/parser');
+const Hotel = require('../app/hotel');
+const HotelRates = require('../app/hotelRates');
 const sinon = require('sinon');
 
 
